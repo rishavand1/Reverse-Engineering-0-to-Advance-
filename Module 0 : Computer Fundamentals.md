@@ -1,9 +1,5 @@
 # Module 0: Computer Fundamentals
 
-## Duration
-
-2 Weeks
-
 ## Difficulty
 
 Beginner
