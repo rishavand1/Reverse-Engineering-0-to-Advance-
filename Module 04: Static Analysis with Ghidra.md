@@ -5,9 +5,17 @@ Ghidra is a software reverse engineering (SRE) framework developed by the Nation
 ---
 
 ## 1. Ghidra Basics
+
+<img width="447" height="447" alt="images" src="https://github.com/user-attachments/assets/98e062bc-8858-4f53-854e-02105cae1689" />
+
 Ghidra converts compiled binary executables back into assembly instructions and decompiled C-like pseudocode. Unlike dynamic analysis tools, Ghidra analyzes code without executing the target file.
 
 ### Primary UI Windows
+
+<img width="803" height="598" alt="image11" src="https://github.com/user-attachments/assets/839973d1-db41-4952-a5b2-5afe68d2f4a8" />
+
+<img width="1575" height="1148" alt="210265653-48b078ab-e7b6-4542-a6b5-9c305770762d" src="https://github.com/user-attachments/assets/b0a92b89-8738-4a9e-a70d-af9ee9e6e408" />
+
 * **Listing Window:** Displays the raw assembly instructions, memory addresses, byte values, and annotations.
 * **Decompiler Window:** Automatically converts assembly instructions into readable C-like pseudocode.
 * **Symbol Tree:** Displays organized symbols including functions, imports, exports, and global variables.
@@ -16,6 +24,10 @@ Ghidra converts compiled binary executables back into assembly instructions and 
 ---
 
 ## 2. Projects
+
+<img width="1009" height="683" alt="ghidra-22862-1" src="https://github.com/user-attachments/assets/3740e2d4-80c0-4b36-904f-b87174a4a3ed" />
+
+
 Ghidra organizes binary analysis files using **Projects**. A project contains imported binaries, data type archives, and saved progress state across sessions.
 
 ### Project Types
@@ -32,6 +44,9 @@ Ghidra organizes binary analysis files using **Projects**. A project contains im
 ---
 
 ## 3. Auto Analysis
+
+<img width="1912" height="781" alt="Module4Analyze" src="https://github.com/user-attachments/assets/a500f821-0149-43e7-b0d5-cf06f685c7b7" />
+
 When a binary is first opened in CodeBrowser, Ghidra prompts to analyze the file automatically. Auto Analysis runs disassembly passes, identifies compiler patterns, recovers function signatures, and builds control flow graphs.
 
 ### Key Analysis Options
@@ -47,6 +62,9 @@ When a binary is first opened in CodeBrowser, Ghidra prompts to analyze the file
 ---
 
 ## 4. Symbol Tree
+
+<img width="442" height="452" alt="images" src="https://github.com/user-attachments/assets/4cfda940-8ef7-418c-a8fc-b7b6e03b78fe" />
+
 The **Symbol Tree** panel categorizes all labeled entry points, functions, variables, and external references found within the binary.
 
 ### Symbol Categories
@@ -64,9 +82,13 @@ The **Symbol Tree** panel categorizes all labeled entry points, functions, varia
 ---
 
 ## 5. Functions
+
+<img width="266" height="532" alt="images" src="https://github.com/user-attachments/assets/52a061c9-e38a-40a2-bf79-acca7bcc19f0" />
+
 Ghidra automatically groups contiguous assembly instructions into discrete function structures, allocating local stack space and determining calling conventions.
 
 ### Reversing Functions
+
 * **Renaming Functions:** Default functions are named `FUN_<address>` (e.g., `FUN_004012a0`). Renaming improves code readability.
 * **Editing Signatures:** Overriding argument types and return values forces the decompiler to output clean pseudocode.
 
@@ -98,6 +120,8 @@ bool validate_license_key(int user_key) {
 ```
 ## 6. Strings
 
+<img width="278" height="181" alt="images" src="https://github.com/user-attachments/assets/ae2535cf-3db0-402b-9742-21100a43e5d9" />
+
 Strings embedded in binaries often reveal critical context, such as status messages, hardcoded passwords, server URLs, encryption keys, and file paths.
 
 #### String Search Workflow
@@ -116,6 +140,9 @@ Hands-on Example: Searching and Defining Strings
 5. If Ghidra fails to auto-format a string, select the bytes in the Listing window and press T to define it manually as a string.
 
 ## 7. References (Xrefs)
+
+<img width="478" height="418" alt="images" src="https://github.com/user-attachments/assets/b28aa6b4-2e72-4270-86fd-400108ddd007" />
+
 
 Cross-references (Xrefs) link data, strings, and functions to the specific instructions that read, write, or call them. They answer the question: "Where in the code is this item used?"
 
@@ -157,9 +184,11 @@ This section covers the core reverse engineering workflow in Ghidra: utilizing t
 ---
 
 ## 1. Decompiler Usage
+
 The Ghidra Decompiler translates low-level assembly language into high-level C pseudocode. It continuously updates its output in real-time as you modify data types, symbol names, and function parameters.
 
 ### Key Decompiler Interactions
+
 * **Navigation:** Double-clicking any variable, function, or address inside the Decompiler jumps to its definition or cross-reference location.
 * **Synchronized Highlighting:** Clicking an instruction in the Listing view highlights its corresponding pseudocode statement in the Decompiler view (and vice versa).
 * **Decompiler Options:** Accessible via `Edit` ➔ `Tool Options...` ➔ `Decompiler` to adjust code formatting, field display, and alias display settings.
@@ -175,6 +204,7 @@ When compiling source code, high-level variable names are stripped, leaving behi
 * **Global Variables (`DAT_XX`):** Statically allocated variables residing in the `.data` or `.bss` memory sections.
 
 ### Hands-on Example: Re-typing & Fixing Variable Sizes
+
 1. Observe raw decompiler output where a variable is misidentified:
 ```c
 // Before Variable Recovery
@@ -198,6 +228,8 @@ float FUN_00401120(float input_val) {
 ```
 
 ## 3. Function Recovery
+
+<img width="240" height="210" alt="images" src="https://github.com/user-attachments/assets/ef998fdb-71f0-43a3-b02e-e57f1a75cf11" />
 
 During compilation, function names are replaced with memory addresses. Ghidra detects function boundaries (prologues and epilogues) and reconstructs their signatures (return types and argument lists).
 
