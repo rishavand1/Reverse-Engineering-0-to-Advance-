@@ -356,3 +356,37 @@ void process_user(USER_ACCOUNT *user_ptr) {
 ```
 
 The Decompiler automatically updates the offset logic:
+
+# Tools Download Link (Ghidra) 
+
+https://github.com/nationalsecurityagency/ghidra
+
+# LABS
+
+## Prerequisits 
+
+* Programing Language Logics
+* Ghidra
+* Kali Linux
+* Windows x64
+* Enthusiasm
+
+## LAB-1
+
+Program : https://drive.google.com/file/d/1HiS6OcDulomwgoV0_iI3eSKzFOWan4OB/view?usp=sharing
+
+Video : https://youtu.be/8EAORjUEB3w?si=N7z3z3aZIZ2itduv
+
+## LAB-2
+
+Program : https://drive.google.com/file/d/1SJkx7caxlaTyUXGteZYr7qbkWl0dPWZo/view?usp=drive_link
+
+Video : https://youtu.be/NXdzRxTR6e8?si=dBD1E8NhB22nnGuY
+
+How to Crack this Program : https://youtu.be/Xixtqjei7Uo?si=QQYKpovUjtxIJaNL
+
+## LAB-3
+
+Program : https://drive.google.com/file/d/1Fypdf8SUXUsPAFS-svA1O8jkYq71P1zD/view?usp=drive_link
+
+Video : https://youtu.be/t6FT-X5EcQ4?si=4pAKKjS82OMek0m1
